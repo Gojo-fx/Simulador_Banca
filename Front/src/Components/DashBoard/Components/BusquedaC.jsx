@@ -12,7 +12,9 @@ export const BusquedaC = () => {
     useEffect(() => {
         const fecthData = async () => {
             try {
-                const response = await fetch('http://localhost:3000/getBusqueda');
+                const URL_BACKEND = import.meta.env.VITE_BACKEND_URL
+
+                const response = await fetch(`${URL_BACKEND}/getBusqueda`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok')
                 }

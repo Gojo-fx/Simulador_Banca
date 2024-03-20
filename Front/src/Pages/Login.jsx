@@ -12,13 +12,12 @@ export default function Login() {
     const { setIsLoggedIn, login, setUserData } = useAuth();
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    
+    const URL_BACKEND = import.meta.env.VITE_BACKEND_URL
 
-   
     const inisesion = async (data) => {
         console.log(data);
         try {
-          const response = await fetch('https://back-simuladorbanca.onrender.com/Login', {
+          const response = await fetch(`${URL_BACKEND}/Login`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
